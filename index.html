@@ -216,6 +216,16 @@
   .deliv .dl{font-size:.9rem;font-weight:600;opacity:.95}
   .deliv.efood{background:#ee2a5b}
   .deliv.wolt{background:#00b9e4}
+  /* our own delivery — brand colours, so it reads as the shop and not as a third app */
+  .deliv.own{background:var(--ink);box-shadow:0 22px 46px -18px rgba(67,52,58,.62)}
+  .deliv.own .dn{font-size:1.6rem;line-height:1.25;margin-top:2px}
+  .deliv.own .dl{font-size:1.05rem;font-weight:700;letter-spacing:.4px}
+  .dbadge{background:var(--peach);color:var(--ink);font-size:.7rem;font-weight:800;letter-spacing:.6px;text-transform:uppercase;padding:5px 13px;border-radius:50px}
+  .deliv .dhours{font-size:.78rem;opacity:.82;margin-top:4px}
+  .dstatus{display:inline-flex;align-items:center;gap:7px;font-size:.75rem;font-weight:600;opacity:.72;margin-top:5px}
+  .dstatus::before{content:"";width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.55);flex:0 0 auto}
+  .dstatus.is-open{opacity:1}
+  .dstatus.is-open::before{background:#86d9b4;box-shadow:0 0 0 3px rgba(134,217,180,.3)}
 
   /* GALLERY */
   .gallery{background:var(--cream)}
@@ -834,10 +844,11 @@
   <div class="wrap">
     <div class="label" data-el="Delivery & Takeaway" data-en="Delivery & Takeaway">Delivery & Takeaway</div>
     <h2 class="stitle" data-el="Το Lizzy's στην πόρτα σου" data-en="Lizzy's at your door">Το Lizzy's στην πόρτα σου</h2>
-    <p class="ssub" data-el="Παράγγειλε από την αγαπημένη σου πλατφόρμα. Delivery: Δευτέρα–Παρασκευή 8:00–16:00." data-en="Order from your favorite app. Delivery: Monday–Friday 8:00–16:00.">Παράγγειλε από την αγαπημένη σου πλατφόρμα. Delivery: Δευτέρα–Παρασκευή 8:00–16:00.</p>
+    <p class="ssub" data-el="Παράγγειλε από την αγαπημένη σου πλατφόρμα ή κάλεσέ μας για να στα φέρουμε εμείς." data-en="Order from your favorite app, or call us and we'll bring it to you.">Παράγγειλε από την αγαπημένη σου πλατφόρμα ή κάλεσέ μας για να στα φέρουμε εμείς.</p>
     <div class="deliv-btns">
-      <a class="deliv efood" href="https://www.e-food.gr/delivery/athina/lizzys-coffee-kai-more-8429650" target="_blank" rel="noopener"><span class="dn">efood</span><span class="dl" data-el="Παράγγειλε online →" data-en="Order online →">Παράγγειλε online →</span></a>
-      <a class="deliv wolt" href="https://wolt.com/el/grc/athens/restaurant/lizzys-coffee-more" target="_blank" rel="noopener"><span class="dn">Wolt</span><span class="dl" data-el="Παράγγειλε online →" data-en="Order online →">Παράγγειλε online →</span></a>
+      <a class="deliv own" href="tel:+302102584692"><span class="dbadge" data-el="Χωρίς έξοδα αποστολής" data-en="No delivery fee">Χωρίς έξοδα αποστολής</span><span class="dn" data-el="Το φέρνουμε εμείς" data-en="We bring it to you">Το φέρνουμε εμείς</span><span class="dl">21 0258 4692 →</span><span class="dhours" data-el="Δευτ–Παρ 8:00–16:00" data-en="Mon–Fri 8:00–16:00">Δευτ–Παρ 8:00–16:00</span><span class="dstatus" id="stOwn"></span></a>
+      <a class="deliv efood" href="https://www.e-food.gr/delivery/athina/lizzys-coffee-kai-more-8429650" target="_blank" rel="noopener"><span class="dn">efood</span><span class="dl" data-el="Παράγγειλε online →" data-en="Order online →">Παράγγειλε online →</span><span class="dhours" data-el="Δευτ–Παρ 7:00–21:00 · Σάβ–Κυρ 8:00–21:00" data-en="Mon–Fri 7:00–21:00 · Sat–Sun 8:00–21:00">Δευτ–Παρ 7:00–21:00 · Σάβ–Κυρ 8:00–21:00</span><span class="dstatus" id="stEfood"></span></a>
+      <a class="deliv wolt" href="https://wolt.com/el/grc/athens/restaurant/lizzys-coffee-more" target="_blank" rel="noopener"><span class="dn">Wolt</span><span class="dl" data-el="Παράγγειλε online →" data-en="Order online →">Παράγγειλε online →</span><span class="dhours" data-el="Δευτ–Παρ 7:00–21:00 · Σάβ–Κυρ 8:00–21:00" data-en="Mon–Fri 7:00–21:00 · Sat–Sun 8:00–21:00">Δευτ–Παρ 7:00–21:00 · Σάβ–Κυρ 8:00–21:00</span><span class="dstatus" id="stWolt"></span></a>
     </div>
   </div>
 </section>
@@ -1047,6 +1058,46 @@
     document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
   }
   document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+
+  // delivery availability — shows whether each channel is taking orders right now
+  (function(){
+    const OWN =[null,[480,960],[480,960],[480,960],[480,960],[480,960],null];              // Mon-Fri 8:00-16:00
+    const PLAT=[[480,1260],[420,1260],[420,1260],[420,1260],[420,1260],[420,1260],[480,1260]]; // Mon-Fri 7-21, Sat/Sun 8-21
+    const DEL=['Κυριακή','Δευτέρα','Τρίτη','Τετάρτη','Πέμπτη','Παρασκευή','Σάββατο'];
+    const DEN=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const fmt=m=>Math.floor(m/60)+':'+String(m%60).padStart(2,'0');
+    function state(sch){
+      const n=new Date(), d=n.getDay(), m=n.getHours()*60+n.getMinutes(), t=sch[d];
+      if(t && m>=t[0] && m<t[1]) return {open:true};
+      for(let i=0;i<8;i++){
+        const dd=(d+i)%7, x=sch[dd];
+        if(!x) continue;
+        if(i===0 && m>=x[0]) continue;
+        return {open:false,inDays:i,day:dd,at:x[0]};
+      }
+      return {open:false,at:null};
+    }
+    function label(st,lang){
+      if(st.open) return lang==='en'?'Open now':'Ανοιχτά τώρα';
+      if(st.at==null) return lang==='en'?'Closed':'Κλειστά';
+      const t=fmt(st.at);
+      if(st.inDays===0) return lang==='en'?('Opens at '+t):('Ανοίγει στις '+t);
+      if(st.inDays===1) return lang==='en'?('Opens tomorrow '+t):('Ανοίγει αύριο '+t);
+      return lang==='en'?('Opens '+DEN[st.day]+' '+t):('Ανοίγει '+DEL[st.day]+' '+t);
+    }
+    function render(){
+      const lang=document.documentElement.lang==='en'?'en':'el';
+      [['stOwn',OWN],['stEfood',PLAT],['stWolt',PLAT]].forEach(function(pair){
+        const el=document.getElementById(pair[0]); if(!el) return;
+        const st=state(pair[1]);
+        el.classList.toggle('is-open',st.open);
+        el.textContent=label(st,lang);
+      });
+    }
+    render();
+    setInterval(render,60000);
+    document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setTimeout(render,0)));
+  })();
 
   // the "+ Extra" links inside the drink cards open the extras panel
   document.querySelectorAll('.mextra').forEach(a=>a.addEventListener('click',e=>{
