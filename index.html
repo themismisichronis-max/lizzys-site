@@ -45,9 +45,6 @@
     --hairline:#efe1d7;
     --gold:#e9b84e;           /* flower centre */
     --shadow:rgba(67,52,58,.12) 0px 0px 26px 0px;
-    --cold:#1f9aa8;           /* ice-cream teal */
-    --cold-deep:#0f6e7c;      /* ice-cream deep teal */
-    --cold-soft:#9fdfe0;      /* ice-cream soft mint-cyan */
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth;overflow-x:clip}
@@ -241,6 +238,7 @@
 
   /* DELIVERY */
   .delivery{background:var(--blush);position:relative;overflow:hidden}
+  .deliv-note{text-align:center;margin-top:26px;color:#9a8e87;font-size:.82rem}
   .delivery .deco{bottom:70px;left:8%;width:90px;color:var(--peach)}
   .delivery .wrap{text-align:center;position:relative;z-index:2}
   .deliv-btns{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:20px}
@@ -371,23 +369,6 @@
   .reveal.l{transform:translateX(-44px)}.reveal.l.in{transform:none}
   .reveal.r{transform:translateX(44px)}.reveal.r.in{transform:none}
 
-  /* ===== ICE-CREAM (cold) MENU TAB ===== */
-  .tab[data-tab="icecream"]{border-color:var(--cold-soft);color:var(--cold-deep)}
-  .tab[data-tab="icecream"]:hover:not(.active){background:var(--cold-soft);border-color:var(--cold-soft);color:var(--cold-deep)}
-  .tab[data-tab="icecream"].active{background:var(--cold-deep);border-color:var(--cold-deep);color:#fff}
-  .ice-banner{display:flex;align-items:center;justify-content:center;gap:10px;margin:-8px auto 30px;max-width:560px;
-    background:linear-gradient(135deg,#e6f8f8,#cdeeef);color:var(--cold-deep);border:1px solid #bfe6e6;
-    border-radius:50px;padding:11px 22px;font-weight:700;font-size:.9rem;letter-spacing:.3px}
-  .ice-banner .snow{font-size:1.1rem}
-  #icecream .mcard{background:linear-gradient(165deg,#f2fbfb,#dbf2f2);border-color:#bfe6e6}
-  #icecream .mcard h3{color:var(--cold-deep)}
-  #icecream .mcard h3 .mbloom{color:var(--cold)}
-  #icecream .mcard .sub{color:var(--cold)}
-  #icecream .mitem{border-bottom-color:#cdebeb}
-  #icecream .mitem .mn{color:#155b63}
-  #icecream .mitem .mn small{color:#5fa6ad}
-  #icecream .mitem .pr{color:var(--cold-deep);white-space:normal;text-align:right;max-width:50%}
-  #icecream .ice-sizes{font-size:.72rem;letter-spacing:.6px;color:var(--cold);font-weight:700;margin:-6px 0 12px}
 
   /* ===== DELIVERY SCOOTER (rides down an invisible winding road) ===== */
   #scooter{position:fixed;top:0;right:0;z-index:95;pointer-events:none;will-change:transform;
@@ -571,7 +552,7 @@
     <div class="stat-grid">
       <div class="stat-card reveal"><div class="num" data-count="4.9" data-dec="1" data-suffix="★">0</div><div class="cap" data-el="Βαθμολογία Google" data-en="Google rating">Βαθμολογία Google</div></div>
       <div class="stat-card reveal"><div class="num" data-count="136" data-suffix="+">0</div><div class="cap" data-el="Κριτικές" data-en="Reviews">Κριτικές</div></div>
-      <div class="stat-card reveal"><div class="num" data-count="120" data-suffix="+">0</div><div class="cap" data-el="Επιλογές στο μενού" data-en="Menu options">Επιλογές στο μενού</div></div>
+      <div class="stat-card reveal"><div class="num" data-count="110" data-suffix="+">0</div><div class="cap" data-el="Επιλογές στο μενού" data-en="Menu options">Επιλογές στο μενού</div></div>
       <div class="stat-card reveal"><div class="num" data-count="2">0</div><div class="cap" data-el="Apps delivery" data-en="Delivery apps">Apps delivery</div></div>
     </div>
   </div>
@@ -584,13 +565,12 @@
   <div class="wrap">
     <div class="label" data-el="Το μενού μας" data-en="Our menu">Το μενού μας</div>
     <h2 class="stitle" data-el="Φτιαγμένα με μεράκι" data-en="Made with love">Φτιαγμένα με μεράκι</h2>
-    <p class="ssub" data-el="Διάλεξε κατηγορία — Ροφήματα, Φαγητό, Γλυκά ή Παγωτά." data-en="Pick a category — Drinks, Food, Sweets or Ice Cream.">Διάλεξε κατηγορία — Ροφήματα, Φαγητό, Γλυκά ή Παγωτά.</p>
+    <p class="ssub" data-el="Διάλεξε κατηγορία — Ροφήματα, Φαγητό ή Γλυκά." data-en="Pick a category — Drinks, Food or Sweets.">Διάλεξε κατηγορία — Ροφήματα, Φαγητό ή Γλυκά.</p>
 
     <div class="tabs">
       <button class="tab active" data-tab="drinks" data-el="☕ Ροφήματα" data-en="☕ Drinks">☕ Ροφήματα</button>
       <button class="tab" data-tab="food" data-el="🥪 Φαγητό" data-en="🥪 Food">🥪 Φαγητό</button>
       <button class="tab" data-tab="sweets" data-el="🍰 Γλυκά &amp; Brunch" data-en="🍰 Sweets &amp; Brunch">🍰 Γλυκά &amp; Brunch</button>
-      <button class="tab" data-tab="icecream" data-el="🍦 Παγωτά" data-en="🍦 Ice Cream">🍦 Παγωτά</button>
     </div>
 
     <!-- DRINKS -->
@@ -851,30 +831,6 @@
       </div>
     </div>
 
-        <!-- ICE CREAM -->
-    <div class="tabpanel" id="icecream">
-      <div class="ice-banner"><span class="snow">❄</span><span data-el="Από 100% φρέσκο γάλα" data-en="Made with 100% fresh milk">Από 100% φρέσκο γάλα</span><span class="snow">❄</span></div>
-      <div class="menu-grid">
-        <div class="mcard">
-          <h3><svg class="mbloom"><use href="#bloom"/></svg> <span data-el="Κλασικές Γεύσεις" data-en="Classic Flavors">Κλασικές Γεύσεις</span></h3>
-          <div class="sub">Soft Ice Cream</div>
-          <div class="ice-sizes">250ml · 360ml · 500gr · 1kg</div>
-          <div class="mitem"><span class="mn"><span data-el="Βανίλια Μαδαγασκάρης" data-en="Madagascar Vanilla">Βανίλια Μαδαγασκάρης</span> <small data-el="Κλασική απαλή βανίλια με νότα αληθινού κόκκου βανίλιας Μαδαγασκάρης" data-en="Classic soft vanilla with a note of real Madagascar vanilla bean">Κλασική απαλή βανίλια με νότα αληθινού κόκκου βανίλιας Μαδαγασκάρης</small></span><span class="pr">2,50 / 3,20 / 7,00 / 13€</span></div>
-          <div class="mitem"><span class="mn"><span data-el="Σοκολάτα Τζιαντούγια" data-en="Gianduja Chocolate">Σοκολάτα Τζιαντούγια</span> <small data-el="Σοκολάτα Gianduja — γευστικός παράδεισος που αντιπροσωπεύει το Τορίνο" data-en="Gianduja chocolate — a true taste of Torino">Σοκολάτα Gianduja — γευστικός παράδεισος που αντιπροσωπεύει το Τορίνο</small></span><span class="pr">2,50 / 3,20 / 7,00 / 13€</span></div>
-          <div class="mitem"><span class="mn"><span data-el="Βανίλια & Σοκολάτα Τζιαντούγια" data-en="Vanilla & Gianduja">Βανίλια & Σοκολάτα Τζιαντούγια</span> <small data-el="Ανάμεικτο — για τους λάτρεις και των δύο γεύσεων" data-en="Mixed — for lovers of both flavors">Ανάμεικτο — για τους λάτρεις και των δύο γεύσεων</small></span><span class="pr">2,50 / 3,20 / 7,00 / 13€</span></div>
-        </div>
-        <div class="mcard m2">
-          <h3><svg class="mbloom"><use href="#bloom"/></svg> <span data-el="Σπέσιαλ 360ml" data-en="Special 360ml">Σπέσιαλ 360ml</span></h3>
-          <div class="sub">Soft Ice Cream</div>
-          <div class="mitem"><span class="mn">Lizzy's Matcha <small data-el="Soft βανίλια Μαδαγασκάρης, Cremino Matcha & Crumble Dry Matcha" data-en="Soft Madagascar vanilla, Cremino Matcha & Crumble Dry Matcha">Soft βανίλια Μαδαγασκάρης, Cremino Matcha & Crumble Dry Matcha</small></span><span class="pr">8,50€</span></div>
-          <div class="mitem"><span class="mn"><span data-el="Σπέσιαλ" data-en="Special">Σπέσιαλ</span> Banana <small data-el="Soft βανίλια–σοκολάτα, κομμάτια μπανάνα, πραλίνα Bueno, τριμμένο μπισκότο, caprice" data-en="Soft vanilla–chocolate, banana pieces, Bueno praline, crushed biscuit, caprice">Soft βανίλια–σοκολάτα, κομμάτια μπανάνα, πραλίνα Bueno, τριμμένο μπισκότο, caprice</small></span><span class="pr">7,00€</span></div>
-          <div class="mitem"><span class="mn"><span data-el="Σπέσιαλ" data-en="Special">Σπέσιαλ</span> <span data-el="Φυστίκι" data-en="Pistachio">Φυστίκι</span> <small data-el="Soft βανίλια–σοκολάτα, πραλίνα φυστίκι, τριμμένο φυστίκι Αιγίνης" data-en="Soft vanilla–chocolate, pistachio praline, crushed Aegina pistachio">Soft βανίλια–σοκολάτα, πραλίνα φυστίκι, τριμμένο φυστίκι Αιγίνης</small></span><span class="pr">8,00€</span></div>
-          <div class="mitem"><span class="mn">Lotus <small data-el="Soft βανίλια–σοκολάτα, πραλίνα Lotus, τριμμένο μπισκότο Lotus" data-en="Soft vanilla–chocolate, Lotus praline, crushed Lotus biscuit">Soft βανίλια–σοκολάτα, πραλίνα Lotus, τριμμένο μπισκότο Lotus</small></span><span class="pr">7,50€</span></div>
-          <div class="mitem"><span class="mn"><span data-el="Σπέσιαλ" data-en="Special">Σπέσιαλ</span> OREO <small data-el="Soft βανίλια–σοκολάτα, πραλίνα, τριμμένο μπισκότο OREO" data-en="Soft vanilla–chocolate, praline, crushed OREO biscuit">Soft βανίλια–σοκολάτα, πραλίνα, τριμμένο μπισκότο OREO</small></span><span class="pr">6,50€</span></div>
-        </div>
-      </div>
-      <p class="menu-note" data-el="❄ Παγωτό από 100% φρέσκο γάλα. Οι τιμές των Κλασικών Γεύσεων αφορούν τα μεγέθη 250ml / 360ml / 500gr / 1kg." data-en="❄ Ice cream from 100% fresh milk. Classic Flavor prices refer to sizes 250ml / 360ml / 500gr / 1kg.">❄ Παγωτό από 100% φρέσκο γάλα. Οι τιμές των Κλασικών Γεύσεων αφορούν τα μεγέθη 250ml / 360ml / 500gr / 1kg.</p>
-    </div>
 
     <p class="menu-note" data-el="* Οι τιμές αφορούν take away και περιλαμβάνουν ΦΠΑ. Για πληροφορίες σχετικά με αλλεργιογόνα συστατικά, απευθύνσου στο προσωπικό μας." data-en="* Prices are for take away and include VAT. For information about allergens, please ask our staff.">* Οι τιμές αφορούν take away και περιλαμβάνουν ΦΠΑ. Για πληροφορίες σχετικά με αλλεργιογόνα συστατικά, απευθύνσου στο προσωπικό μας.</p>
   </div>
@@ -892,6 +848,7 @@
       <a class="deliv efood" href="https://www.e-food.gr/delivery/athina/lizzys-coffee-kai-more-8429650" target="_blank" rel="noopener"><span class="dn">efood</span><span class="dl" data-el="Παράγγειλε online →" data-en="Order online →">Παράγγειλε online →</span><span class="dhours" data-el="Δευτ–Παρ 7:30–18:30 · Σάβ–Κυρ 8:00–19:30" data-en="Mon–Fri 7:30–18:30 · Sat–Sun 8:00–19:30">Δευτ–Παρ 7:30–18:30 · Σάβ–Κυρ 8:00–19:30</span><span class="dstatus" id="stEfood"></span></a>
       <a class="deliv wolt" href="https://wolt.com/el/grc/athens/restaurant/lizzys-coffee-more" target="_blank" rel="noopener"><span class="dn">Wolt</span><span class="dl" data-el="Παράγγειλε online →" data-en="Order online →">Παράγγειλε online →</span><span class="dhours" data-el="Δευτ–Παρ 7:30–18:30 · Σάβ–Κυρ 8:00–19:30" data-en="Mon–Fri 7:30–18:30 · Sat–Sun 8:00–19:30">Δευτ–Παρ 7:30–18:30 · Σάβ–Κυρ 8:00–19:30</span><span class="dstatus" id="stWolt"></span></a>
     </div>
+    <p class="deliv-note" data-el="Για τις δικές μας παραδόσεις δεχόμαστε και πληρωμή με IRIS, στο ΑΦΜ 170164931." data-en="For our own deliveries we also accept IRIS payments, to VAT No. 170164931.">Για τις δικές μας παραδόσεις δεχόμαστε και πληρωμή με IRIS, στο ΑΦΜ 170164931.</p>
   </div>
 </section>
 
