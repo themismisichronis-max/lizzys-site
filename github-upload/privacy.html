@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index,follow">
+<title>Πολιτική Απορρήτου &amp; Cookies — Lizzy's Coffee &amp; More</title>
+<style>
+  /* Γραμματοσειρές τοπικά — καμία σύνδεση με servers της Google (GDPR). */
+  @font-face{font-family: 'EB Garamond'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/eb-garamond-700-greek.woff2') format('woff2'); unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF}
+  @font-face{font-family: 'EB Garamond'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/eb-garamond-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+  @font-face{font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/inter-400-greek.woff2') format('woff2'); unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF}
+  @font-face{font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/inter-400-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+  @font-face{font-family: 'Inter'; font-style: normal; font-weight: 500; font-display: swap; src: url('fonts/inter-500-greek.woff2') format('woff2'); unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF}
+  @font-face{font-family: 'Inter'; font-style: normal; font-weight: 500; font-display: swap; src: url('fonts/inter-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+  @font-face{font-family: 'Inter'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/inter-600-greek.woff2') format('woff2'); unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF}
+  @font-face{font-family: 'Inter'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/inter-600-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+
+  :root{--cream:#fbf3ed;--blush:#f8e6dd;--peach:#f1cabb;--peach-deep:#d68a6b;--ink:#43343a;--charcoal:#5b4d50;--hairline:#efe1d7}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',sans-serif;color:var(--charcoal);background:var(--cream);line-height:1.7}
+  a{color:var(--peach-deep)}
+  .top{background:var(--ink);color:#fff;padding:16px 0}
+  .wrap{max-width:780px;margin:0 auto;padding:0 24px}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .logo{font-family:'EB Garamond',serif;font-size:1.4rem;font-weight:700;color:#fff;line-height:1.1}
+  .logo small{display:block;font-size:.5rem;letter-spacing:3px;color:var(--peach)}
+  .back{color:#fff;font-size:.9rem;border:1px solid rgba(255,255,255,.3);border-radius:50px;padding:8px 18px;text-decoration:none;white-space:nowrap}
+  main{padding:56px 0 80px}
+  h1{font-family:'EB Garamond',serif;font-size:2.6rem;color:var(--ink);margin-bottom:8px;line-height:1.15}
+  .upd{color:#9a8e87;font-size:.85rem;margin-bottom:30px}
+  h2{font-family:'EB Garamond',serif;font-size:1.5rem;color:var(--ink);margin:34px 0 10px}
+  h3{font-size:.95rem;color:var(--ink);margin:20px 0 6px}
+  p{margin-bottom:12px}
+  ul{margin:0 0 12px 22px}
+  li{margin-bottom:6px}
+  .card{background:#fff;border:1px solid var(--hairline);border-radius:14px;padding:18px 22px;margin-bottom:14px}
+  .tbl{width:100%;border-collapse:collapse;margin:10px 0 18px;font-size:.86rem;background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--hairline)}
+  .tbl th,.tbl td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--hairline);vertical-align:top}
+  .tbl th{background:var(--blush);color:var(--ink);font-weight:600}
+  .tbl tr:last-child td{border-bottom:none}
+  .scroll{overflow-x:auto}
+  .note{background:var(--peach);color:var(--ink);border-radius:14px;padding:16px 20px;font-size:.92rem;margin-top:28px}
+  .btn{display:inline-block;background:var(--ink);color:#fff;border:none;border-radius:50px;padding:11px 22px;font:600 .88rem 'Inter',sans-serif;cursor:pointer;text-decoration:none}
+  footer{background:var(--ink);color:rgba(255,255,255,.7);text-align:center;padding:24px;font-size:.82rem}
+  @media(max-width:600px){h1{font-size:2rem}.top .wrap{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <span class="logo">Lizzy's<small>COFFEE &amp; MORE</small></span>
+  <a class="back" href="index.html">← Επιστροφή</a>
+</div></div>
+
+<main><div class="wrap">
+  <h1>Πολιτική Απορρήτου &amp; Cookies</h1>
+  <p class="upd">Τελευταία ενημέρωση: Οκτώβριος 2026</p>
+
+  <p>Η σελίδα αυτή εξηγεί με απλά λόγια ποια προσωπικά δεδομένα επεξεργαζόμαστε μέσω του site <b>lizzyscoffee.gr</b>, γιατί, με ποια νομική βάση και ποια δικαιώματα έχετε. Συντάχθηκε σύμφωνα με τον Γενικό Κανονισμό Προστασίας Δεδομένων (ΕΕ) 2016/679 (GDPR), τον ν. 4624/2019 και τον ν. 3471/2006 για τις ηλεκτρονικές επικοινωνίες.</p>
+
+  <h2>1. Ποιος είναι υπεύθυνος για τα δεδομένα σας</h2>
+  <div class="card">
+    <p style="margin:0">
+      <b>Σκουρτανιώτη Δήμητρα του Τριανταφύλλου</b><br>
+      Διακριτικός τίτλος: Lizzy's Coffee &amp; More<br>
+      Λεωφόρος Δεκελείας 3, Νέα Χαλκηδόνα 143 43, Αττική<br>
+      ΑΦΜ: 170164931 &nbsp;·&nbsp; Αρ. ΓΕΜΗ: 183748503000<br>
+      Τηλέφωνο: <a href="tel:+302102584692">21 0258 4692</a><br>
+      Email: <a href="mailto:lizzys.coffeeandmore@gmail.com">lizzys.coffeeandmore@gmail.com</a>
+    </p>
+  </div>
+  <p>Για οποιοδήποτε θέμα σχετικά με τα δεδομένα σας, επικοινωνήστε μαζί μας στα παραπάνω στοιχεία. Δεν έχουμε ορίσει Υπεύθυνο Προστασίας Δεδομένων (DPO), καθώς δεν απαιτείται για επιχείρηση του μεγέθους και της δραστηριότητάς μας.</p>
+
+  <h2>2. Τι συλλέγουμε και γιατί</h2>
+
+  <h3>α) Φόρμα επικοινωνίας</h3>
+  <p>Όταν συμπληρώνετε τη φόρμα «Στείλε μας μήνυμα», τα στοιχεία που γράφετε (όνομα, τηλέφωνο, ημερομηνία, αριθμός ατόμων, μήνυμα) <b>δεν αποστέλλονται σε κανέναν server</b>. Η σελίδα απλώς ετοιμάζει ένα email μέσα στη δική σας εφαρμογή αλληλογραφίας και το στέλνετε εσείς, όποτε και αν το θέλετε. Από τη στιγμή που θα φτάσει στο email μας, το επεξεργαζόμαστε για να απαντήσουμε στο αίτημα ή στην κράτησή σας.</p>
+  <ul>
+    <li><b>Νομική βάση:</b> άρθρο 6 παρ. 1 στοιχ. β΄ GDPR (ενέργειες πριν από τη σύναψη σύμβασης, π.χ. κράτηση) και στοιχ. στ΄ (έννομο συμφέρον μας να απαντάμε σε όσους μας γράφουν).</li>
+    <li><b>Χρόνος διατήρησης:</b> έως 12 μήνες από την τελευταία επικοινωνία, εκτός αν προκύψει λόγος να κρατηθεί περισσότερο (π.χ. φορολογική ή νομική υποχρέωση).</li>
+  </ul>
+
+  <h3>β) Cookies και παρόμοιες τεχνολογίες</h3>
+  <p>Όταν μπαίνετε για πρώτη φορά, σας ρωτάμε αν δέχεστε τα μη απαραίτητα cookies. <b>Μέχρι να απαντήσετε «Αποδοχή όλων», δεν φορτώνεται τίποτα από την Google</b> — ούτε στατιστικά, ούτε χάρτης. Αν επιλέξετε «Μόνο απαραίτητα», δεν τοποθετείται κανένα cookie στατιστικών.</p>
+  <div class="scroll"><table class="tbl">
+    <tr><th>Τι</th><th>Σκοπός</th><th>Διάρκεια</th><th>Αποδέκτης</th><th>Νομική βάση</th></tr>
+    <tr><td><code>lizzys_consent</code><br>(τοπική αποθήκευση)</td><td>Να θυμόμαστε την απάντησή σας στο μήνυμα για τα cookies, ώστε να μη σας ρωτάμε συνεχώς</td><td>6 μήνες</td><td>Μόνο εμείς — δεν φεύγει από τη συσκευή σας</td><td>Απαραίτητο για υπηρεσία που ζητήσατε (άρθρο 4 παρ. 5 ν. 3471/2006) — δεν χρειάζεται συγκατάθεση</td></tr>
+    <tr><td>Google Analytics 4<br><code>_ga</code>, <code>_ga_*</code></td><td>Ανώνυμη μέτρηση επισκεψιμότητας: πόσοι μπαίνουν, από πού και ποιες σελίδες βλέπουν</td><td>Έως 24 μήνες</td><td>Google Ireland Ltd, Ιρλανδία</td><td>Συγκατάθεσή σας (άρθρο 6 παρ. 1 στοιχ. α΄ GDPR)</td></tr>
+    <tr><td>Google Maps<br>(ενσωματωμένος χάρτης)</td><td>Να σας δείξουμε πού βρισκόμαστε</td><td>Ορίζεται από την Google</td><td>Google Ireland Ltd, Ιρλανδία</td><td>Συγκατάθεσή σας — φορτώνει μόνο αν το δεχθείτε ή πατήσετε «Εμφάνιση χάρτη»</td></tr>
+  </table></div>
+  <p>Δεν χρησιμοποιούμε cookies διαφήμισης, δεν κάνουμε profiling και δεν παίρνουμε αυτοματοποιημένες αποφάσεις για εσάς.</p>
+
+  <h3>γ) Αρχεία καταγραφής του διακομιστή</h3>
+  <p>Η σελίδα φιλοξενείται στην υποδομή της Cloudflare, η οποία καταγράφει τεχνικά στοιχεία κάθε επίσκεψης (διεύθυνση IP, ώρα, τύπος προγράμματος περιήγησης) για ασφάλεια και σωστή λειτουργία. Νομική βάση: έννομο συμφέρον (άρθρο 6 παρ. 1 στοιχ. στ΄ GDPR).</p>
+
+  <h2>3. Πώς αλλάζετε γνώμη</h2>
+  <p>Μπορείτε να ανακαλέσετε ή να αλλάξετε τη συγκατάθεσή σας ανά πάσα στιγμή και τόσο εύκολα όσο τη δώσατε: πατήστε <b>«Ρυθμίσεις cookies»</b> στο κάτω μέρος της αρχικής σελίδας και το μήνυμα θα εμφανιστεί ξανά. Η ανάκληση δεν επηρεάζει τη νομιμότητα της επεξεργασίας που έγινε πριν από αυτήν.</p>
+  <p><a class="btn" href="index.html#reserve">Επιστροφή στη σελίδα</a></p>
+
+  <h2>4. Σε ποιους δίνουμε δεδομένα</h2>
+  <p>Δεν πουλάμε και δεν ενοικιάζουμε προσωπικά δεδομένα σε κανέναν. Δεδομένα μοιραζόμαστε μόνο με:</p>
+  <ul>
+    <li><b>Google Ireland Ltd</b> — για τα στατιστικά και τον χάρτη, και μόνο εφόσον έχετε συναινέσει.</li>
+    <li><b>Cloudflare</b> — για τη φιλοξενία της σελίδας.</li>
+    <li><b>Δημόσιες αρχές</b> — μόνο όπου το επιβάλλει ο νόμος.</li>
+  </ul>
+  <p><b>Διαβίβαση εκτός Ευρωπαϊκού Οικονομικού Χώρου:</b> η Google και η Cloudflare ενδέχεται να διαβιβάσουν δεδομένα στις ΗΠΑ. Οι διαβιβάσεις αυτές στηρίζονται στην απόφαση επάρκειας της Ευρωπαϊκής Επιτροπής της 10ης Ιουλίου 2023 για το <i>EU–US Data Privacy Framework</i> και, συμπληρωματικά, σε Τυποποιημένες Συμβατικές Ρήτρες της ΕΕ.</p>
+
+  <h2>5. Σύνδεσμοι προς άλλες πλατφόρμες</h2>
+  <p>Η σελίδα περιέχει συνδέσμους προς <b>efood</b>, <b>Wolt</b>, <b>Box</b>, <b>Instagram</b>, <b>Facebook</b> και <b>TikTok</b>. Αυτοί είναι απλοί σύνδεσμοι: τίποτα δεν φορτώνεται από τις πλατφόρμες αυτές όσο μένετε στη σελίδα μας. Μόλις τους πατήσετε, μεταφέρεστε στη δική τους σελίδα και ισχύουν οι δικές τους πολιτικές απορρήτου, για τις οποίες δεν ευθυνόμαστε.</p>
+
+  <h2>6. Τα δικαιώματά σας</h2>
+  <p>Σύμφωνα με τα άρθρα 15–22 GDPR έχετε δικαίωμα:</p>
+  <ul>
+    <li><b>Πρόσβασης</b> — να μάθετε τι δεδομένα σας έχουμε.</li>
+    <li><b>Διόρθωσης</b> — να διορθώσουμε ό,τι είναι λάθος ή ελλιπές.</li>
+    <li><b>Διαγραφής</b> («δικαίωμα στη λήθη»).</li>
+    <li><b>Περιορισμού</b> της επεξεργασίας.</li>
+    <li><b>Φορητότητας</b> — να πάρετε τα δεδομένα σας σε αναγνώσιμη μορφή.</li>
+    <li><b>Εναντίωσης</b> στην επεξεργασία που στηρίζεται σε έννομο συμφέρον.</li>
+    <li><b>Ανάκλησης της συγκατάθεσής σας</b> οποτεδήποτε.</li>
+  </ul>
+  <p>Για να ασκήσετε οποιοδήποτε από αυτά, γράψτε μας στο <a href="mailto:lizzys.coffeeandmore@gmail.com">lizzys.coffeeandmore@gmail.com</a>. Απαντάμε δωρεάν, το αργότερο εντός ενός μήνα.</p>
+
+  <h2>7. Καταγγελία στην Αρχή</h2>
+  <p>Αν θεωρείτε ότι δεν σεβαστήκαμε τα δικαιώματά σας, μπορείτε να προσφύγετε στην <b>Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα</b>:</p>
+  <div class="card">
+    <p style="margin:0">Λεωφ. Κηφισίας 1–3, 115 23 Αθήνα<br>
+    Τηλέφωνο: 210 6475600<br>
+    <a href="https://www.dpa.gr" target="_blank" rel="noopener">www.dpa.gr</a></p>
+  </div>
+
+  <h2>8. Παιδιά</h2>
+  <p>Η σελίδα απευθύνεται σε ενήλικες και δεν συλλέγουμε εν γνώσει μας δεδομένα παιδιών κάτω των 15 ετών. Αν αντιληφθούμε ότι λάβαμε τέτοια δεδομένα, τα διαγράφουμε.</p>
+
+  <h2>9. Ασφάλεια</h2>
+  <p>Η σελίδα λειτουργεί αποκλειστικά μέσω κρυπτογραφημένης σύνδεσης (HTTPS). Τα emails που μας στέλνετε φυλάσσονται στον λογαριασμό αλληλογραφίας μας, με πρόσβαση μόνο από την ιδιοκτήτρια της επιχείρησης.</p>
+
+  <h2>10. Αλλαγές σε αυτή την πολιτική</h2>
+  <p>Αν αλλάξει κάτι ουσιαστικό (π.χ. προσθέσουμε νέα υπηρεσία), θα ενημερώσουμε αυτή τη σελίδα και την ημερομηνία στην κορυφή. Καλό είναι να τη ρίχνετε μια ματιά κατά καιρούς.</p>
+</div></main>
+
+<footer>Σκουρτανιώτη Δήμητρα του Τριανταφύλλου · Lizzy's Coffee &amp; More · Λεωφ. Δεκελείας 3, Νέα Χαλκηδόνα 143 43 · ΑΦΜ 170164931 · ΓΕΜΗ 183748503000</footer>
+</body>
+</html>
